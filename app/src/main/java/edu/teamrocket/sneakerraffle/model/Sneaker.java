@@ -9,6 +9,8 @@ public class Sneaker implements Raffle {
     private EnumSet<Sizes> listaSizes;
 
 
+    
+
     public Sneaker(String nombre, String estilo, double precio) {
         this.nombre = nombre;
         this.estilo = estilo;
@@ -53,5 +55,47 @@ public class Sneaker implements Raffle {
     public String toString() {
         return "\n\t\t"+ this.getNombre() + "\n\t\t" + this.getEstilo()
                + "\n\t\t" + this.price()+"$\n\t\t" + this.getListaSizes();
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+        result = prime * result + ((estilo == null) ? 0 : estilo.hashCode());
+        long temp;
+        temp = Double.doubleToLongBits(precio);
+        result = prime * result + (int) (temp ^ (temp >>> 32));
+        result = prime * result + ((listaSizes == null) ? 0 : listaSizes.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Sneaker other = (Sneaker) obj;
+        if (nombre == null) {
+            if (other.nombre != null)
+                return false;
+        } else if (!nombre.equals(other.nombre))
+            return false;
+        if (estilo == null) {
+            if (other.estilo != null)
+                return false;
+        } else if (!estilo.equals(other.estilo))
+            return false;
+        if (Double.doubleToLongBits(precio) != Double.doubleToLongBits(other.precio))
+            return false;
+        if (listaSizes == null) {
+            if (other.listaSizes != null)
+                return false;
+        } else if (!listaSizes.equals(other.listaSizes))
+            return false;
+        return true;
     }
 }
