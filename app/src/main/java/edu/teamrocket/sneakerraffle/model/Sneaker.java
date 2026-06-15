@@ -62,9 +62,8 @@ public class Sneaker implements Raffle {
 
     @Override
     public void register(Entry entry, Entry entry2, Entry entry3) {
-        if (!listaEntries.contains(entry)) {
-            listaEntries.add(entry);
-        }
+        register(entry);
+
     }
 
     public List<String> listEntries() {
@@ -78,6 +77,14 @@ public class Sneaker implements Raffle {
 
     public int totalEntries() {
         return listaEntries.size();
+    }
+
+    @Override
+    public List<String> cancel(Entry entry) {
+        List<String> listaCancelaciones = new ArrayList<>();
+        listaCancelaciones.add(entry.getEmail());
+        listaEntries.remove(entry);
+        return listaCancelaciones;
     }
 
     @Override
