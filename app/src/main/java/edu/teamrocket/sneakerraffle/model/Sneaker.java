@@ -1,8 +1,6 @@
 package edu.teamrocket.sneakerraffle.model;
 
-import java.util.ArrayList;
 import java.util.EnumSet;
-import java.util.List;
 
 public class Sneaker implements Raffle {
     private String nombre;
@@ -25,7 +23,7 @@ public class Sneaker implements Raffle {
         return nombre;
     }
     
-    public double getPrecio() {
+    public double price() {
         return precio;
     }
 
@@ -54,6 +52,6 @@ public class Sneaker implements Raffle {
     @Override
     public String toString() {
         return "\n\t\t"+ this.getNombre() + "\n\t\t" + this.getEstilo()
-               + "\n\t\t" + this.getPrecio()+"$\n\t\t" + this.getListaSizes();
+               + "\n\t\t" + this.price()+"$\n\t\t" + this.getListaSizes();
     }
 }
