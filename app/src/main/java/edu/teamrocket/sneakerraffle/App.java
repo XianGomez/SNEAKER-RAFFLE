@@ -1,5 +1,6 @@
 package edu.teamrocket.sneakerraffle;
 
+import edu.teamrocket.sneakerraffle.model.Entry;
 import edu.teamrocket.sneakerraffle.model.Raffle;
 import edu.teamrocket.sneakerraffle.model.Sizes;
 import edu.teamrocket.sneakerraffle.model.Sneaker;
