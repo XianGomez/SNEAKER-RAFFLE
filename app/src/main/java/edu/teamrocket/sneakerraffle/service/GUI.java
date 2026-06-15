@@ -19,4 +19,8 @@ public class GUI {
         System.out.println(entry + "\n");
     }
 
+    public static void drawWinner(Entry winner) {
+        System.err.println(winner + "\n");
+    }
+
 }
