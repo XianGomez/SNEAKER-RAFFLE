@@ -10,5 +10,6 @@ public interface Raffle {
     void register(Entry entry1, Entry entry2, Entry entry3);
     int totalEntries();
     List<String> listEntries();
+    List<String> cancel(Entry entry);
 
 }
