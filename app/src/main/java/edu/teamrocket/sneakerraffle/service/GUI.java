@@ -20,7 +20,7 @@ public class GUI {
     }
 
     public static void drawWinner(Entry winner) {
-        System.err.println(winner + "\n");
+        System.out.println("\n\t\t¡¡You are a Winner!!:" + winner + "\n");
     }
 
 }
