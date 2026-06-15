@@ -1,5 +1,6 @@
 package edu.teamrocket.sneakerraffle.service;
 
+import edu.teamrocket.sneakerraffle.model.Entry;
 import edu.teamrocket.sneakerraffle.model.Raffle;
 
 public class GUI {
@@ -12,6 +13,10 @@ public class GUI {
         "\t\t" + "|=====;__/___./" + "\n" +
         "\t\t" + "\'-\'-\'-\"\"\"\"\"\"\"`" + "\n" +
         "\t\t" + sneaker.toString());
+    }
+
+    public static void drawEntry(Entry entry) {
+        System.out.println(entry);
     }
 
 }
