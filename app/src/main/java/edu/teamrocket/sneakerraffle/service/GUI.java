@@ -16,7 +16,7 @@ public class GUI {
     }
 
     public static void drawEntry(Entry entry) {
-        System.out.println(entry);
+        System.out.println(entry + "\n");
     }
 
 }
