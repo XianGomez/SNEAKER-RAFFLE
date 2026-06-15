@@ -10,7 +10,7 @@ public class Sneaker implements Raffle {
     private String estilo;
     private double precio;
     private EnumSet<Sizes> listaSizes;
-    private List<Entry> listaEntries = new ArrayList<>();
+    private static List<Entry> listaEntries = new ArrayList<>();
 
     
 
@@ -103,6 +103,12 @@ public class Sneaker implements Raffle {
         int indexGanador = random.nextInt(0, listaEntries.size());
         return listaEntries.get(indexGanador);
     }
+
+    public static List<Entry> getListaEntries() {
+        return listaEntries;
+    }
+
+    
 
     @Override
     public String toString() {
