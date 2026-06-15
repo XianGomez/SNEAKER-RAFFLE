@@ -6,7 +6,7 @@ public class Entry {
     private String nombre;
     private Sizes talla;
     private String direccion;
-    private String metodoPago;
+    private Payment metodoPago;
     private double total;
 
 
@@ -46,11 +46,11 @@ public class Entry {
         return nombre;
     }
 
-    public void payment(String metodo) {
+    public void payment(Payment metodo) {
         this.metodoPago = metodo;
     }
 
-    public String getMetodoPago() {
+    public Payment getPayment() {
         return metodoPago;
     }
 
@@ -67,9 +67,11 @@ public class Entry {
         return "\n\t\temail: " + this.getEmail()
                 + "\n\t\tSize: " + this.getSize()
                 + "\n\t\tAddress: " + this.getDireccion()
-                + "\n\t\tPayment: " + this.getMetodoPago()
+                + "\n\t\tPayment: " + this.getPayment()
                 + "\n\t\tTotal: " + this.getTotal() + "$";
     }
+
+    
     
 
     
