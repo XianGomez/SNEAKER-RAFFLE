@@ -62,7 +62,16 @@ public class Sneaker implements Raffle {
 
     @Override
     public void register(Entry entry, Entry entry2, Entry entry3) {
-        register(entry);
+        List<Entry> listaNuevasEntries = new ArrayList<>();
+        listaNuevasEntries.add(entry);
+        listaNuevasEntries.add(entry2);
+        listaNuevasEntries.add(entry3);
+        
+        for (Entry e : listaNuevasEntries) {
+            if (!listaEntries.contains(e)) {
+                listaEntries.add(e);
+            }
+        }
 
     }
 
