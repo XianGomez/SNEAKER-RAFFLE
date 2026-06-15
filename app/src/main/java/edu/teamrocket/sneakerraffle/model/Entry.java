@@ -6,7 +6,7 @@ public class Entry {
     private String nombre;
     private Sizes talla;
     private String direccion;
-    private Payment metodoPago;
+    private String metodoPago;
     private double total;
 
 
@@ -46,11 +46,11 @@ public class Entry {
         return nombre;
     }
 
-    public void payment(Payment metodo) {
+    public void payment(String metodo) {
         this.metodoPago = metodo;
     }
 
-    public Payment getPayment() {
+    public String getPayment() {
         return metodoPago;
     }
 
