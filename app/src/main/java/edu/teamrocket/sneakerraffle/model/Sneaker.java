@@ -3,6 +3,7 @@ package edu.teamrocket.sneakerraffle.model;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
+import java.util.Random;
 
 public class Sneaker implements Raffle {
     private String nombre;
@@ -94,6 +95,13 @@ public class Sneaker implements Raffle {
         listaCancelaciones.add(entry.getEmail());
         listaEntries.remove(entry);
         return listaCancelaciones;
+    }
+
+    @Override
+    public Entry draw() {
+        Random random = new Random();
+        int indexGanador = random.nextInt(0, listaEntries.size());
+        return listaEntries.get(indexGanador);
     }
 
     @Override
