@@ -1,13 +1,15 @@
 package edu.teamrocket.sneakerraffle.model;
 
+import java.util.ArrayList;
 import java.util.EnumSet;
+import java.util.List;
 
 public class Sneaker implements Raffle {
     private String nombre;
     private String estilo;
     private double precio;
     private EnumSet<Sizes> listaSizes;
-
+    private List<Entry> listaEntries = new ArrayList<>();
 
     
 
@@ -49,6 +51,33 @@ public class Sneaker implements Raffle {
 
     public EnumSet<Sizes> getListaSizes() {
         return listaSizes;
+    }
+
+    @Override
+    public void register(Entry entry) {
+        if (!listaEntries.contains(entry)) {
+            listaEntries.add(entry);
+        }
+    }
+
+    @Override
+    public void register(Entry entry, Entry entry2, Entry entry3) {
+        if (!listaEntries.contains(entry)) {
+            listaEntries.add(entry);
+        }
+    }
+
+    public List<String> listEntries() {
+        List<String> listaCorreos = new ArrayList<>();
+        for (Entry e : listaEntries) {
+            listaCorreos.add(e.getEmail());
+        }
+
+        return listaCorreos;
+    }
+
+    public int totalEntries() {
+        return listaEntries.size();
     }
 
     @Override
